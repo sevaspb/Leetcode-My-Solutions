@@ -56,6 +56,7 @@ class QuickSort{
 ### Merge Sort
 - Merge Sort 的核心思想是至顶向下将整个数组打散，然后再bottom to top将数组合并
 - 一个小优化是在merge之前首先判断是否需要merge。因为mid的左边以及右边已经有序了，如果arr[mid]<= arr[mid + 1]那么无需merge数组就已经有序了
+- Top to Bottom
 ```java
 public class MergeSort {
   private Integer[] aux;
@@ -92,6 +93,49 @@ public class MergeSort {
     Integer arr[] = ArrayUtil.randomArray(LEN);
     long l = System.currentTimeMillis();
     new MergeSort().sort(arr);
+    System.out.println("running: " + (System.currentTimeMillis() - l));
+    System.out.println(ArrayUtil.isSorted(arr));
+  }
+}
+```
+
+- Bottom Up
+```java
+public class MergeSortBT {
+  private Integer aux[];
+
+  public void sort(Integer arr[]){
+    int N = arr.length;
+    aux = new Integer[N];
+    sort(arr, 0, N - 1);
+  }
+
+  private void sort(Integer arr[], int lo, int hi){
+    if(lo >= hi) return;
+    int N = arr.length;
+    for(int sz = 1; sz < N; sz+=sz)
+      for(int i = 0; i < N - sz; i = i + 2 * sz)
+        merge(arr, i, i + sz - 1, Math.min(i + 2 * sz - 1, N - 1));
+  }
+
+  private void merge(Integer arr[], int lo, int mid, int hi){
+    int i = lo, j = mid + 1;
+    for(int k = lo; k <= hi; k++)
+      aux[k] = arr[k];
+    int k = lo;
+    while(k <= hi){
+      if(i > mid) arr[k] = aux[j++];
+      else if(j > hi) arr[k] = aux[i++];
+      else if(aux[i] > aux[j]) arr[k] = aux[j++];
+      else arr[k] = aux[i];
+      k++;
+    }
+  }
+  public static void main(String[] args) {
+    int LEN = 1000000;
+    Integer arr[] = ArrayUtil.randomArray(LEN);
+    long l = System.currentTimeMillis();
+    new MergeSortBT().sort(arr);
     System.out.println("running: " + (System.currentTimeMillis() - l));
     System.out.println(ArrayUtil.isSorted(arr));
   }
@@ -260,6 +304,82 @@ public class ShellSort {
     }
     new ShellSort().sort(arr);
     System.out.println("running: " + (System.currentTimeMillis() - l));
+  }
+}
+```
+
+### Priority Queue
+- priority 的优势是如果我们只想取最大的几个值，就不需要对这个数组进行排序，因为这样时间复杂度是NlogN, 空间复杂度是O(N),而如果我们有priority queue，可以维护一个size为M的数组，不停的向这个小数组中插入和删除值，这样时间复杂度是NlogM,空间复杂度是O(M)
+- priority底层是complete(perfectly balanced, except for bottom level) binary tree
+- 两个关键的方法siftDown和siftUp
+
+```java
+public class PriorityQueue {
+  private Integer heap[];
+  private int N = 0;
+  public PriorityQueue(Integer arr[]){
+    heap = new Integer[arr.length + 1];
+    for(int num : arr){
+      insert(num);
+    }
+  }
+
+  public void insert(Integer key){
+    if(N == heap.length - 1) return;
+    heap[++N]= key;
+    siftUp(N);
+  }
+
+  public int deleteMax(){
+    int res = heap[1];
+    swap(heap, 1, N--);
+    heap[N + 1] = null;
+    siftDown(1);
+    return res;
+  }
+
+  public boolean isEmpty(){
+    return N == 0;
+  }
+
+  public int size() {
+    return N;
+  }
+
+  private void siftDown(int pos){
+    while(pos * 2 <= N){
+      int j = pos * 2;
+      if(j + 1 <= N && heap[j+1] > heap[j]) j++;
+      if(heap[pos] > heap[j]) break;
+      swap(heap, pos, j);
+      pos = j;
+    }
+  }
+
+  private void siftUp(int pos){
+    while(pos > 1){
+      int parent = pos / 2;
+      if(heap[parent] > heap[pos]) break;
+      swap(heap, pos, parent);
+      pos/=2;
+    }
+  }
+
+  private void swap(Integer arr[], int i, int j){
+    if(i == j) return;
+    Integer tempt = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tempt;
+  }
+
+  public static void main(String[] args) {
+    final int LEN = 1000000;
+    Integer arr[] = ArrayUtil.randomArray(LEN);
+    PriorityQueue queue = new PriorityQueue(arr);
+    Integer res[] = new Integer[LEN];
+    for(int i = LEN - 1; i >= 0; i--)
+      res[i] = queue.deleteMax();
+    System.out.println(ArrayUtil.isSorted(res));
   }
 }
 ```
