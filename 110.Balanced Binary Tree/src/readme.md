@@ -6,7 +6,7 @@ For this problem, a height-balanced binary tree is defined as:
 
 > a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
 
-![110%20Balanced%20Binary%20Tree%2028b44d5bda674be9ab4ef9d202f860a4/Untitled.png](110%20Balanced%20Binary%20Tree%2028b44d5bda674be9ab4ef9d202f860a4/Untitled.png)
+![Untitled.png](Untitled.png)
 
 ### Solution
 
