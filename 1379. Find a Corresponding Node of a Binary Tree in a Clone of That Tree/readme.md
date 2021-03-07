@@ -1,6 +1,6 @@
 # 1379. Find a Corresponding Node of a Binary Tree in a Clone of That Tree
 
-![1379%20Find%20a%20Corresponding%20Node%20of%20a%20Binary%20Tree%20in%20a6847dcdb71649f5a6360e89db0c8ad7/Untitled.png](1379%20Find%20a%20Corresponding%20Node%20of%20a%20Binary%20Tree%20in%20a6847dcdb71649f5a6360e89db0c8ad7/Untitled.png)
+![Untitled.png](Untitled.png)
 
 ### Solution
 
