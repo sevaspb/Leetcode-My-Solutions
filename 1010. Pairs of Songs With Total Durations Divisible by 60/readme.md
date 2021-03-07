@@ -2,7 +2,7 @@
 
 ### LeetCode 1010. Pairs of Songs With Total Durations Divisible by 60
 
-![1010%20Pairs%20of%20Songs%20With%20Total%20Durations%20Divisible%20f7672552a9044003bf4327b64fb97c3b/Screenshot_2020-12-08_at_21.46.01.png](1010%20Pairs%20of%20Songs%20With%20Total%20Durations%20Divisible%20f7672552a9044003bf4327b64fb97c3b/Screenshot_2020-12-08_at_21.46.01.png)
+![Screenshot_2020-12-08_at_21.46.01.png](Screenshot_2020-12-08_at_21.46.01.png)
 
 ### Solution
 
