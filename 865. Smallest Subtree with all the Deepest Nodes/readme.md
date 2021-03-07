@@ -1,8 +1,8 @@
 # 865. Smallest Subtree with all the Deepest Nodes
 
-![865%20Smallest%20Subtree%20with%20all%20the%20Deepest%20Nodes%206aedfa1e68cd445d9e3187d1b8d232e2/Screenshot_2020-12-12_at_18.44.07.png](865%20Smallest%20Subtree%20with%20all%20the%20Deepest%20Nodes%206aedfa1e68cd445d9e3187d1b8d232e2/Screenshot_2020-12-12_at_18.44.07.png)
+![Screenshot_2020-12-12_at_18.44.07.png](Screenshot_2020-12-12_at_18.44.07.png)
 
-![865%20Smallest%20Subtree%20with%20all%20the%20Deepest%20Nodes%206aedfa1e68cd445d9e3187d1b8d232e2/Screenshot_2020-12-12_at_18.44.24.png](865%20Smallest%20Subtree%20with%20all%20the%20Deepest%20Nodes%206aedfa1e68cd445d9e3187d1b8d232e2/Screenshot_2020-12-12_at_18.44.24.png)
+![Screenshot_2020-12-12_at_18.44.24.png](Screenshot_2020-12-12_at_18.44.24.png)
 
 ### Solution
 
