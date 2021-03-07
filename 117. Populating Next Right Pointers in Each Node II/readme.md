@@ -2,7 +2,7 @@
 
 - 将树中的每一个node与它的同一level的右侧结点相连接
 
-![117%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20II%20ec863389182e46e28ec3e306000a1e00/Screenshot_2020-12-06_at_22.53.48.png](117%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20II%20ec863389182e46e28ec3e306000a1e00/Screenshot_2020-12-06_at_22.53.48.png)
+![Screenshot_2020-12-06_at_22.53.48.png](Screenshot_2020-12-06_at_22.53.48.png)
 
 ### Solution 1
 
